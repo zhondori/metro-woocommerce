@@ -1,0 +1,111 @@
+.featured {
+  height: 1500px;
+  font-family: Bergen-Sans, sans-serif;
+  .container-fluid {
+    height: 100%;
+    .row {
+      height: 100%;
+      .col-md-12 {
+        &:nth-child(1) {
+          height: 5%;
+          margin-bottom: 30px;
+          color: $main;
+        }
+        @include flex;
+        h2 {
+          text-align: center;
+        }
+      }
+      .main-col {
+        padding: 10px 0 !important;
+        height: 95%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 450px);
+        grid-gap: 25px;
+        &__child {
+          width: 100%;
+          height: 100%;
+          padding: 15px 25px;
+          border-radius: 4px;
+          background: #f8f8f8;
+          &:nth-child(1) {
+            grid-row: 1 / 3;
+            grid-column: 1 / 3;
+            .main-col__child_content {
+              height: 10%;
+            }
+            img {
+              height: 90%;
+              &.small {
+                height: 85%;
+                transition: .4s ease all;
+              }
+            }
+            .btn-box {
+              height: 0%;
+              .add-to-cart-btn {
+                height: 100%;
+              }
+              &.hovered {
+                height: 5%;
+              }
+            }
+          }
+          img {
+            height: 80%;
+            width: 100%;
+            object-fit: cover;
+            transition: .4s ease all;
+            &.small {
+              height: 67%;
+              transition: .4s ease all;
+            }
+          }
+          &_content {
+            height: 20%;
+            width: 100%;
+            .product-title {
+              margin-bottom: 5px;
+              font-size: 22px;
+            }
+            .price {
+              margin-bottom: 5px;
+              font-size: 18px;
+              del {
+                color: #a5a5a5;
+              }
+            }
+          }
+          .btn-box {
+            height: 0%;
+            overflow: hidden;
+            .add-to-cart-btn {
+              padding: 12px 18px;
+              background: $main;
+              border-radius: 5px;
+              color: $white;
+              font-family: "Roboto", sans-serif;
+              text-transform: uppercase;
+              border: none;
+              outline: none;
+              letter-spacing: 1px;
+              font-weight: 500;
+              transform: translateY(150px);
+              opacity: 0;
+              transition: 0.4s ease all;
+            }
+            &.hovered {
+              height: 13%;
+              .add-to-cart-btn {
+                transform: translateY(0);
+                opacity: 1;
+                transition: 0.4s ease all;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

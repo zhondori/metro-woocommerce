@@ -1,0 +1,140 @@
+.main-header {
+  height: 450px;
+  margin-top: 20px;
+  background: #f9f9f9;
+  overflow: hidden;
+  .container {
+    height: 100%;
+    .row {
+      height: 100%;
+      position: relative;
+      background: url("../../imgs/bg.jpg") center center no-repeat;
+      background-size: cover;
+      .main_ul {
+        &__li {
+          display: none;
+          &.active-content {
+            display: block;
+            .row {
+              .col-md-6 {
+                height: 450px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                overflow: hidden;
+                font-family: Bergen-Sans, sans-serif;
+                &:nth-child(1) {
+                  h4,
+                  h1,
+                  p,
+                  a {
+                    animation: main 2s linear;
+                    animation-iteration-count: 1;
+                    animation-delay: 0s;
+                    @keyframes main {
+                      0% {
+                        opacity: 0;
+                        transform: translateY(200px);
+                      }
+                      100% {
+                        opacity: 1;
+                        transform: translateY(0px);
+                      }
+                    }
+                  }
+                  h4 {
+                    animation-delay: 0.1s;
+                    text-transform: uppercase;
+                    font-size: 22px;
+                    margin-bottom: 1.5rem;
+                  }
+                  h1 {
+                    animation-delay: 0.2s;
+                    color: $black;
+                    letter-spacing: 1px;
+                    font-size: 55px;
+                    margin-bottom: 1rem;
+                  }
+                  p {
+                    animation-delay: 0.3s;
+                    width: 70%;
+                    font-size: 16px;
+                    font-weight: 300;
+                    font-family: "Roboto", sans-serif;
+                  }
+                  a {
+                    animation-delay: 0.4s;
+                    color: $black;
+                    padding: 15px 0px;
+                    position: relative;
+                    text-decoration: none;
+                    font-size: 20px;
+                    &::before {
+                      content: "";
+                      width: 35%;
+                      height: 3px;
+                      background: $black;
+                      position: absolute;
+                      bottom: 0;
+                      transition: 0.5s ease all;
+                      left: 0;
+                    }
+                    &:hover::before {
+                      width: 100%;
+                      transition: 0.5s ease all;
+                    }
+                  }
+                }
+                &:nth-child(2) {
+                  animation: image 2s linear;
+                  animation-iteration-count: 1;
+                  animation-delay: 0s;
+                  @keyframes image {
+                    0% {
+                      opacity: 0;
+                    }
+                    100% {
+                      opacity: 1;
+                    }
+                  }
+                  position: relative;
+                  img {
+                    width: 300px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .col-md-12.indicator {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        bottom: 20px;
+        left: 0;
+        .indicator__child {
+            width: 12px;
+            height: 12px;
+            border: 1px solid $black;
+            border-radius: 50%;
+            cursor: pointer;
+            background: $white;
+            &:not(:last-child) {
+                margin-right: 10px;
+            }                
+            &.active_indicator {
+                background: $black;
+            }
+        }
+      }
+    }
+  }
+}

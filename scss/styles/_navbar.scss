@@ -1,0 +1,189 @@
+.navigation {
+  font-family: Bergen-Sans;
+  height: 80px;
+  padding-top: 20px;
+  width: 100%;
+  &.fixed {
+    position: fixed;
+    height: 90px;
+    padding: 15px 0;
+    top: 0;
+    left: 0;
+    z-index: 10101;
+    background: #ffffff;
+    box-shadow: 0 3px 5px #dddddd;
+  }
+  .container {
+    height: 100%;
+    .row {
+      height: 100%;
+      div[class*="col-md"] {
+        height: 100%;
+      }
+      .col-md-3 {
+        img {
+          width: 50%;
+        }
+      }
+      .col-md-6 {
+        .nav_list {
+          height: 100%;
+          @include flex();
+          justify-content: flex-start;
+          position: relative;
+          margin: 0;
+          &__item {
+            list-style: none;
+            line-height: 60px;
+            margin: 0 10px;
+            position: relative;
+            a {
+              text-decoration: none;
+              color: #343434;
+              font-size: 17px;
+              transition: 0.3s ease all;
+              user-select: none;
+              i {
+                margin-left: 0;
+                font-size: 16px;
+              }
+            }
+            &:hover {
+              a.navLink {
+                color: #7c7c7c;
+                transition: 0.3s ease all;
+              }
+            }
+            &_ul {
+              width: 100%;
+              position: absolute;
+              transform: translate(-50%, -50%);
+              width: 350px;
+              height: auto;
+              display: flex;
+              justify-content: space-between;
+              align-items: flex-start;
+              background: #f1f1f1;
+              padding: 10px;
+              list-style: none;
+              border-top: 2px solid $main;
+              z-index: 1010101;
+              li {
+                height: 100%;
+                margin: 0;
+                ul.sticky {
+                  position: relative;
+                  display: block;
+                  height: 100%;
+                  list-style: none;
+                  li {
+                    line-height: 40px;
+                    height: auto;
+                    a:hover {
+                      color: #7c7c7c;
+                      transition: 0.3s ease all;
+                    }
+                  }
+                }
+              }
+            }
+            &::before {
+              content: "";
+              width: 100%;
+              height: 2px;
+              background: #111111;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              display: none;
+              transition: 0.5s linear all;
+            }
+            &:hover::before {
+              display: block;
+              transition: 0.5s linear all;
+            }
+            &:nth-child(1) {
+              .nav_list__item_ul {
+                top: 193px;
+                left: 200px;
+                width: 400px;
+                @include anime(anime1, #{193px + 25px}, 195px, 200px);
+              }
+            }
+            &:nth-child(2) {
+              .nav_list__item_ul {
+                top: 234px;
+                left: 260px;
+                width: 520px;
+                @include anime(anime2, #{234px + 25px}, 234px, 260px);
+              }
+            }
+            &:nth-child(3) {
+              .nav_list__item_ul {
+                top: 152px;
+                left: 172px;
+                @include anime(anime3, #{152px + 25px}, 153px, 172px);
+              }
+            }
+            &:nth-child(4) {
+              .nav_list__item_ul {
+                top: 275px;
+                left: 172px;
+                @include anime(anime4, #{275px + 25px}, 275px, 172px);
+              }
+            }
+            &:nth-child(5) {
+              .nav_list__item_ul {
+                top: 152px;
+                left: 172px;
+                @include anime(anime5, #{152px + 25px}, 154px, 172px);
+              }
+            }
+          }
+        }
+      }
+      .col-md-3.sidebar {
+        height: 100%;
+        ul {
+          @include flex();
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          li {
+            line-height: 60px;
+            list-style: none;
+            position: relative;
+            font-family: "Roboto", sans-serif;
+            &:not(:last-child) {
+              margin-right: 15px;
+            }
+            &.bar {
+              display: none;
+            } 
+            svg {
+              width: 28px;
+              cursor: pointer;
+            }
+            .count {
+              position: absolute;
+              top: 5px;
+              right: -10px;
+              font-size: 16px;
+              border-radius: 50%;
+              background: $main;
+              color: #ffffff;
+              width: 25px;
+              height: 25px;
+              @include flex();
+              box-shadow: 0 4px 6px #4b4b4b;
+            }
+            .price {
+              margin: 0;
+              font-size: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

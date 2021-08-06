@@ -1,0 +1,274 @@
+@include media(576px) {
+  /* Navigation Bar Style */
+  .navigation {
+    height: 90px;
+    padding: 15px 0;
+    border-bottom: 3px solid $main;
+    &.fixed {
+      position: fixed;
+    }
+    .container {
+      height: 100%;
+      .row {
+        align-items: center;
+        div[class*="col-md"] {
+          height: auto;
+        }
+        .col-md-3 {
+          height: 60px !important;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          img {
+            width: 60%;
+          }
+        }
+        .col-md-6 {
+          z-index: 10;
+          background: white;
+          order: 1;
+          height: 0 !important;
+          overflow-x: hidden;
+          overflow-y: scroll;
+          transition: 0.4s linear height !important;
+          padding: 0;
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+          &.navbar-showing {
+            height: 336px !important;
+            transition: 0.4s linear height !important;
+            border-bottom: 3px solid $main;
+          }
+          .nav_list {
+            flex-direction: column;
+            padding: 0;
+            &__item {
+              position: relative;
+              border: none;
+              &_ul {
+                width: 100% !important;
+                position: relative;
+                transform: none;
+                height: auto;
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                z-index: auto;
+                top: 0 !important;
+                left: 0 !important;
+                border: none;
+                background: transparent;
+                li {
+                  ul.sticky {
+                    padding: 0;
+                  }
+                }
+              }
+              &::before {
+                display: none;
+              }
+              &:hover::before {
+                display: none;
+              }
+            }
+          }
+        }
+        .col-md-3.sidebar {
+          padding: 0;
+          order: 0;
+          z-index: 10;
+          align-items: center;
+          ul {
+            @include flex();
+            width: 100%;
+            height: 100%;
+            padding: 0 10px 0 0;
+            justify-content: flex-end;
+            li {
+              &.bar {
+                display: block;
+                i {
+                  cursor: pointer;
+                  font-size: 26px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Search Bar Style */
+  .searchBar {
+    display: none;
+  }
+
+  /* Main Header */
+  .main-header {
+    height: 524px;
+    margin-top: 0;
+    background: #f9f9f9;
+    overflow: hidden;
+    .container {
+      height: 100%;
+      .row {
+        .main_ul {
+          &__li {
+            &.active-content {
+              .row {
+                .col-md-6 {
+                  height: 272px;
+                  &:nth-child(1) {
+                    padding: 0 0 0 2rem;
+                    h4 {
+                      font-size: 18px;
+                      margin-bottom: .5rem;
+                    }
+                    h1 {
+                      font-size: 35px;
+                      margin-bottom: 1rem;
+                    }
+                  }
+                  &:nth-child(2) {
+                    img {
+                      width: 200px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .col-md-12.indicator {
+          .indicator__child {
+            width: 8px;
+            height: 8px;
+          }
+        }
+      }
+    }
+  }
+
+  // Double Product Section
+  .double-product {
+    height: 740px;
+    margin: 30px 0;
+    .container-fluid {
+      .row {
+        .double {
+          grid-template-columns: 1fr;
+          grid-template-rows: 370px;
+          column-gap: 0;
+          row-gap: 30px;
+        }
+      }
+    }
+  }
+
+  // Featured Products Section
+  .featured {
+    height: 3800px;
+    .container-fluid {
+      .row {
+        .main-col {
+          padding: 10px !important;
+          grid-template-columns: 1fr;
+          grid-template-rows: repeat(9, 380px);
+          &__child {
+            &:nth-child(1) {
+              grid-row: 1 / 1;
+              grid-column: 1 / 1;
+              .main-col__child_content {
+                height: 20%;
+              }
+              img {
+                height: 80%;
+                &.small {
+                  height: 67%;
+                  transition: 0.4s ease all;
+                }
+              }
+              .btn-box {
+                height: 0%;
+                .add-to-cart-btn {
+                  height: 100%;
+                }
+                &.hovered {
+                  height: 13%;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // News Letter
+  .newsletter {
+    height: 300px;
+    .container-fluid {
+      .row {
+        .col-md-12 {
+          h2 {
+            font-size: 30px;
+          }
+          p {
+            width: 90%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+          }
+          .submit-form {
+            width: 90%;
+            button {
+              box-shadow: 0 4px 8px #cccccc;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Posts
+  .posts {
+    height: 1200px;
+  }
+
+  // Gallery
+  .gallery {
+    .container-fluid {
+      .row {
+        .col-md-12 {
+          grid-template-columns: repeat(4, 1fr);
+          grid-template-rows: 100px;
+        }
+      }
+    }
+  }
+
+  // Footer
+  footer {
+    .container {
+      .row {
+        .col-md-3 {
+          &:nth-child(1) {
+            img {
+              width: 40%;
+              margin-bottom: 30px;
+            }
+          }
+        }
+      }
+      &.second {
+        height: 180px;
+        .row {
+          .socials {
+            justify-content: flex-start;
+          }
+        }
+      }
+    }
+  }
+}

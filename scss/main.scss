@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import "./helpers/variables";
+@import "./helpers/mixins";
+@font-face {
+  font-family: Bergen-Sans;
+  src: url("../fonts/BergenSans.woff") format("woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #b8b8b8;
+  border-radius: 99999px;
+}
+.to-top {
+  width: 45px;
+  height: 45px;
+  color: #ffffff;
+  background: #222222;
+  position: fixed;
+  bottom: 8%;
+  right: -50%;
+  @include flex();
+  text-decoration: none;
+  transform: scale(0);
+  transition: 1s linear all;
+  z-index: 9999999999;
+  &:hover {
+    color: #ffffff;
+  }
+  i {
+    font-size: 22px;
+  }
+  &.active {
+    transition: 1s linear all;
+    transform: scale(1);
+    right: 5%;
+  }
+}
+
+@import "./styles/navbar";
+@import "./styles/searchBar";
+@import "./styles/main-header";
+@import "./styles/double";
+@import "./styles/featured";
+@import "./styles/newsletter";
+@import "./styles/posts";
+@import "./styles/gallery";
+@import "./styles/footer";
+@import "./responsive";

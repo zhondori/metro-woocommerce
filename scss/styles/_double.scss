@@ -1,0 +1,73 @@
+.double-product {
+  height: 370px;
+  margin: 30px 0;
+  .container-fluid {
+    height: 100%;
+    .row {
+      height: 100%;
+      .double {
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 100%;
+        column-gap: 20px;
+        &__product {
+          background: #eeeeee;
+          display: flex;
+          flex-direction: column;
+          background-size: contain;
+          background-color: #F8F8F8 !important;
+          padding: 40px 35px;
+          &:nth-child(1) {
+            justify-content: flex-start;
+            align-items: flex-start;
+            background: url("../../imgs/443.png") center center no-repeat;
+            background-position-y: bottom;
+          }
+          &:nth-child(2) {
+            justify-content: flex-end;
+            align-items: flex-end;
+            background: url("../../imgs/444.png") center center no-repeat;
+            background-position-y: bottom;
+            background-position-x: left;
+            background-size: 53%;
+          }
+          &_desc {
+            font-family: Bergen-Sans, sans-serif;
+            user-select: none;
+            h2 {
+              text-transform: uppercase;
+              font-size: 32px;
+              color: $main;
+              font-weight: 600;
+              letter-spacing: 1px;
+            }
+            a {
+              text-decoration: none;
+              font-size: 20px;
+              color: $main;
+              padding: 10px 0;
+              padding-bottom: 15px;
+              position: relative;
+              text-transform: capitalize;
+              &::before {
+                content: '';
+                width: 35%;
+                height: 2px;
+                background: $main;
+                transition: .4s ease all;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+              }
+              &:hover::before {
+                transition: .4s ease all;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
